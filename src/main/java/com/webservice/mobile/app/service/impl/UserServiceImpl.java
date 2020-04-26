@@ -1,7 +1,8 @@
 package com.webservice.mobile.app.service.impl;
 
-import com.webservice.mobile.app.UserRepository;
+
 import com.webservice.mobile.app.io.entity.UserEntity;
+import com.webservice.mobile.app.io.repositories.UserRepository;
 import com.webservice.mobile.app.service.UserService;
 import com.webservice.mobile.app.shared.Utils;
 import com.webservice.mobile.app.shared.dto.UserDTO;
@@ -47,6 +48,16 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(storedUSerDeatils,returnValue);
 
         return returnValue;
+    }
+
+    @Override
+    public UserDTO getUser(String email) {
+        UserEntity userEntity = userRepository.findUserByEmail(email);
+        if (userEntity == null) throw new UsernameNotFoundException(email);
+        UserDTO returnValue = new UserDTO();
+        BeanUtils.copyProperties(userEntity,returnValue);
+        return returnValue;
+
     }
 
     @Override

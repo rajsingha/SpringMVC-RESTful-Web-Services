@@ -1,4 +1,4 @@
-package com.webservice.mobile.app;
+package com.webservice.mobile.app.io.repositories;
 
 import com.webservice.mobile.app.io.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
