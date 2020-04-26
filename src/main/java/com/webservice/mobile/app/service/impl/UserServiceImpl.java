@@ -1,11 +1,13 @@
 package com.webservice.mobile.app.service.impl;
 
 
+import com.webservice.mobile.app.exceptions.UserServiceException;
 import com.webservice.mobile.app.io.entity.UserEntity;
 import com.webservice.mobile.app.io.repositories.UserRepository;
 import com.webservice.mobile.app.service.UserService;
 import com.webservice.mobile.app.shared.Utils;
 import com.webservice.mobile.app.shared.dto.UserDTO;
+import com.webservice.mobile.app.ui.model.response.ErrorMessages;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -33,8 +35,11 @@ public class UserServiceImpl implements UserService {
     public UserDTO createUser(UserDTO userDTO) {
 
 
-        if (userRepository.findUserByEmail(userDTO.getEmail()) !=null)
-            throw new RuntimeException("Record Already Exists");
+        if (userRepository != null){
+            if (userRepository.findUserByEmail(userDTO.getEmail()) !=null)
+                throw new UserServiceException(ErrorMessages.RECORD_ALREADY_EXISTS.getErrorMessage());
+        }
+
 
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(userDTO,userEntity);
@@ -53,7 +58,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUser(String email) {
         UserEntity userEntity = userRepository.findUserByEmail(email);
-        if (userEntity == null) throw new UsernameNotFoundException(email);
+        if (userEntity == null) throw new UserServiceException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
         UserDTO returnValue = new UserDTO();
         BeanUtils.copyProperties(userEntity,returnValue);
         return returnValue;
@@ -65,7 +70,7 @@ public class UserServiceImpl implements UserService {
 
         UserDTO returnValue = new UserDTO();
         UserEntity userEntity = userRepository.findByUserId(userId);
-        if (userEntity == null) throw new UsernameNotFoundException(userId);
+        if (userEntity == null) throw new UserServiceException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
         BeanUtils.copyProperties(userEntity,returnValue);
 
         return returnValue;
