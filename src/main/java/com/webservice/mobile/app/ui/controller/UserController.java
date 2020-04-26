@@ -5,6 +5,8 @@ import com.webservice.mobile.app.service.UserService;
 import com.webservice.mobile.app.shared.dto.UserDTO;
 import com.webservice.mobile.app.ui.model.request.UserDetailsRequestModel;
 import com.webservice.mobile.app.ui.model.response.ErrorMessages;
+import com.webservice.mobile.app.ui.model.response.OperationStatusModel;
+import com.webservice.mobile.app.ui.model.response.RequestOperationStatus;
 import com.webservice.mobile.app.ui.model.response.UserRest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,17 +66,23 @@ public class UserController {
 
         UserDTO userDTO = new UserDTO();
         BeanUtils.copyProperties(userDetails,userDTO);
-
         UserDTO updateUser = userService.updateUser(id,userDTO);
         BeanUtils.copyProperties(updateUser,returnValue);
-
 
         return returnValue;
     }
 
-    @DeleteMapping
-    public String deleteUser(){
-        return "delete user was called";
+    @DeleteMapping(path = "/{id}",produces = {MediaType.APPLICATION_XML_VALUE,
+            MediaType.APPLICATION_JSON_VALUE})
+    public OperationStatusModel deleteUser(@PathVariable String id){
+        OperationStatusModel returnValue = new OperationStatusModel();
+        returnValue.setOperationName(RequestOperationName.DELETE.name());
+
+        userService.deleteUser(id);
+
+        returnValue.setOperationResult(RequestOperationStatus.SUCCESS.name());
+
+        return returnValue;
     }
 
 
