@@ -1,5 +1,14 @@
 package com.webservice.mobile.app;
 
+
+/*
+	This RestAPI is Created By Raj Singha.
+	For testing and documentation run the app using docker
+	and visit --> http://localhost:8080/mobile-app-ws/swagger-ui.html
+
+*/
+
+
 import com.webservice.mobile.app.security.AppProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +21,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class MobileAppWebServicesApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(MobileAppWebServicesApplication.class, args);
 	}
 
