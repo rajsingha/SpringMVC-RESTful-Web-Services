@@ -3,6 +3,8 @@
 
 # A highly secure RESTful API for Web & Mobile Applications
 
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/rajsingha/SpringMVC-Mobile-App-Web-Services?include_prereleases)
+
 ## Documentation
 To connect the API with your database you need change the application.properties file.<br>
 
