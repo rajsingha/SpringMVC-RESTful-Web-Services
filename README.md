@@ -141,4 +141,22 @@ In the UserController.java [POST, GET, UPDATE, DELETE] functions are available.<
     }
 
 ```
+#### To Run the application you need to install maven and run the given command below:
+
+Run the command where you have downloaded the repository.
+
+```
+install mvn
+```
+Then
+```
+spring-boot:run
+```
+#### To test the API use postman.
+
+#### For testing and documentation run the app using docker
+```
+http://localhost:8080/mobile-app-ws/swagger-ui.html
+
+```
 
