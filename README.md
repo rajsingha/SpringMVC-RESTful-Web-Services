@@ -1,2 +1,2 @@
 # SpringMVC-Mobile-App-Web-Services
-<img src="images/spring-boot.jpg" >
+<img src="images/spring-logo.png" >
