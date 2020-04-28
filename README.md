@@ -6,4 +6,4 @@
 ## Documentation
 To connect the API with your database you need change the application.properties file.<br>
 
-![application.properties file link](src="https://github.com/rajsingha/SpringMVC-Mobile-App-Web-Services/tree/master/src/main/resources")
+![](https://github.com/rajsingha/SpringMVC-Mobile-App-Web-Services/blob/master/src/main/resources/application.properties)
