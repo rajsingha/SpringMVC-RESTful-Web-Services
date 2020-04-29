@@ -163,6 +163,9 @@ http://localhost:8080/mobile-app-ws/swagger-ui.html
 
 ```
 
+
+###### Developed with ❤️ by Raj Singha
+
 ## LICENSE
 
 MIT License
