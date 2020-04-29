@@ -1,4 +1,4 @@
-# SpringMVC-Mobile-App-Web-Services
+# SpringMVC-RESTful-Web-Services
 <img src="images/spring-logo.png"  height="200" >
 
 # A highly secure RESTful API for Web & Mobile Applications
