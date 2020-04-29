@@ -1,7 +1,8 @@
-# SpringMVC-RESTful-Web-Services
+## SpringMVC-RESTful-Web-Services
+
 <img src="images/spring-logo.png"  height="200" >
 
-# A highly secure RESTful API for Web & Mobile Applications
+## A highly secure RESTful API for Web & Mobile Applications
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/rajsingha/SpringMVC-Mobile-App-Web-Services?include_releases) <br>
 [Version 0.0.1](https://github.com/rajsingha/SpringMVC-Mobile-App-Web-Services/releases)
