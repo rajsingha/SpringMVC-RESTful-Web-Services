@@ -14,18 +14,23 @@ To connect the API with your database you need change the application.properties
 
 ### application.properties file
 1. Change the file according to your neeed
+
 ```
 spring.datasource.username= <Your database username here>
 
 spring.datasource.password= <Your database password here>
 
 spring.datasource.url= <your databse url here> 
+
 ```
 ### The basic functionalities of the API :
+
 In the UserController.java [POST, GET, UPDATE, DELETE] functions are available.<br>
 
 [UserController.java](https://github.com/rajsingha/SpringMVC-Mobile-App-Web-Services/blob/master/src/main/java/com/webservice/mobile/app/ui/controller/UserController.java)
+
 #### Login Function
+
 ```  
     @ApiOperation(value = "The Get User Details Web Service Endpoint",
     notes = "This Web Service Endpoint returns User Details. User public user id in URL path." +
@@ -40,7 +45,9 @@ In the UserController.java [POST, GET, UPDATE, DELETE] functions are available.<
         BeanUtils.copyProperties(userDTO,returnValue);
         return returnValue;
     }
+    
 ```
+
 #### CreateUser Function
 
 ```
@@ -93,6 +100,7 @@ In the UserController.java [POST, GET, UPDATE, DELETE] functions are available.<
 
         return returnValue;
     }
+    
 ```
 #### DeleteUser Function
 
