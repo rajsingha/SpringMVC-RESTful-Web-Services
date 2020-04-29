@@ -8,11 +8,13 @@
 [Version 0.0.1](https://github.com/rajsingha/SpringMVC-Mobile-App-Web-Services/releases)
 
 ## Documentation
+
 To connect the API with your database you need change the application.properties file.<br>
 
 [application.properties file](https://github.com/rajsingha/SpringMVC-Mobile-App-Web-Services/blob/master/src/main/resources/application.properties)
 
 ### application.properties file
+
 1. Change the file according to your neeed
 
 ```
